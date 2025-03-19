@@ -1,0 +1,37 @@
+{%- style -%}
+  .hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    width: 100vw;
+  }
+
+  .hero-section__left {
+    background-color: #3f939d;
+  }
+{%- endstyle -%}
+
+<section class="hero-section">
+  <div class="hero-section__left">
+   <div></div>
+   <div>
+    <h4 style="width: 60%">{{ section.settings.heading_text }}</h4>
+   </div>
+  </div>
+  <div></div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Section",
+  "class": "hero-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Heading Text",
+      "default": "Beautiful Handcrafted Japanese Products"
+    }
+  ]
+}
+{% endschema %}
