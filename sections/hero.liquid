@@ -1,0 +1,127 @@
+{%- style -%}
+  .hero-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-section__left {
+    background-color: #3a6165;
+    min-height: 300px;
+  }
+
+  .hero-image-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media screen and (min-width: 750px) {
+    .hero-section {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      height: 486px;
+    }
+
+    .hero-section__left,
+    .hero-image-container {
+      min-height: unset;
+    }
+  }
+{%- endstyle -%}
+
+<section class="hero-section">
+  <div class="hero-section__left">
+    <div  class="hero-image-container">
+      {%- if section.settings.image_left != blank -%}
+        {{
+          section.settings.image_left
+          | image_url: width: 1500, height:500
+          | image_tag:
+            loading: "lazy",
+            class: "hero-image",
+            height: section.settings.image_left.height,
+            width: section.settings.image_left.width,
+            alt: section.settings.left_image_alt
+          | escape
+        }}
+      {%- else -%}
+        {{ "lifestyle-1" | placeholder_svg_tag: "placeholder-svg" }}
+      {%- endif -%}
+    </div>
+    <div style="padding:0px 60px;">
+      <h1 style="width: 80%; color: white;">{{ section.settings.heading_text }}</h1>
+    </div>
+  </div>
+  <div>
+    <div class="hero-image-container" style="height: 100%">
+      {%- if section.settings.image_right != blank -%}
+        {{
+          section.settings.image_right
+          | image_url: width: 1500
+          | image_tag:
+            loading: "lazy",
+            class: "hero-image",
+            height: section.settings.image_right.height,
+            width: section.settings.image_right.width,
+            alt: section.settings.right_image_alt
+          | escape
+        }}
+      {%- else -%}
+        {{ "lifestyle-1" | placeholder_svg_tag: "placeholder-svg" }}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Hero",
+    "class": "hero",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading_text",
+        "label": "Heading Text",
+        "default": "Beautiful Handcrafted Japanese Products"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_left",
+        "label": "Left Hero Image"
+      },
+      {
+        "type": "text",
+        "id": "left_image_alt",
+        "label": "Left Image alt text",
+        "info": "Describe the left image for accessibility"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_right",
+        "label": "Right Hero Image"
+      },
+      {
+        "type": "text",
+        "id": "right_image_alt",
+        "label": "Right Image alt text",
+        "info": "Describe the right image for accessibility"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero",
+        "category": "Custom Sections"
+      }
+    ]
+  }
+{% endschema %}

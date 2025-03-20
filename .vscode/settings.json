@@ -1,0 +1,8 @@
+{
+  "[liquid]": {
+    "editor.defaultFormatter": "Shopify.theme-check-vscode",
+    "editor.formatOnSave": true
+  },
+  "prettier.disableLanguages": [], // Ensure Liquid isn't disabled
+  "prettier.enable": true
+}

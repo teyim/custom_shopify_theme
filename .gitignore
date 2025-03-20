@@ -1,0 +1,9 @@
+node_modules/
+
+# Package files
+package-lock.json  
+package.json
+
+# Prettier plugin auto-download
+.prettier-plugin-liquid
+.qodo

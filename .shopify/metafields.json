@@ -29,6 +29,66 @@
         "name": "dimension",
         "category": "MEASUREMENT"
       }
+    },
+    {
+      "key": "color-pattern",
+      "namespace": "shopify",
+      "name": "Color",
+      "description": "Defines the primary color or pattern, such as blue or striped",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "decoration-material",
+      "namespace": "shopify",
+      "name": "Decoration material",
+      "description": "Identifies the material used for decoration, such as sequins or feathers",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "vase-shape",
+      "namespace": "shopify",
+      "name": "Vase shape",
+      "description": "Describes the geometric or organic form of a vase, such as round or bottle",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "tableware-material",
+      "namespace": "shopify",
+      "name": "Tableware material",
+      "description": "Specifies the composition of tableware, such as bone china or earthenware",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "shape",
+      "namespace": "shopify",
+      "name": "Shape",
+      "description": "Describes the geometric form or shape of a product, such as round or heart",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
+    },
+    {
+      "key": "coffee-tea-set-pieces-included",
+      "namespace": "shopify",
+      "name": "Coffee/Tea set pieces included",
+      "description": "Details the individual items within a coffee or tea set, like cups and saucers",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
     }
   ],
   "variant": [],
